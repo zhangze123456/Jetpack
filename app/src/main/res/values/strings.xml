@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Jetpack</string>
+    <string name="text_wenzi">测试文字</string>
+    <string name="_2">+2</string>
+    <string name="_1">+1</string>
+</resources>
