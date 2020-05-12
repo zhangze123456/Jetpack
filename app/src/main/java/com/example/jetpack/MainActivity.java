@@ -32,13 +32,12 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         myViewModel = new ViewModelProvider(MainActivity.this).get(MyViewModel.class);
         //取值更新
-                myViewModel.getLiveData().observe(this, new Observer<Integer>() {
+        myViewModel.getLiveData().observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(Integer integer) {
-                textView.setText(integer+"");
+                textView.setText(integer + "");
             }
         });
-
     }
 
     @OnClick({R.id.textView2, R.id.textView3})

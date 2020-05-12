@@ -1,6 +1,7 @@
 package com.example.jetpack;
 
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.SavedStateHandle;
 import androidx.lifecycle.ViewModel;
 
 /**
@@ -14,6 +15,8 @@ import androidx.lifecycle.ViewModel;
 public class MyViewModel extends ViewModel {
     //Caused by: java.lang.IllegalAccessException:
 
+    private SavedStateHandle handle;
+
     public MutableLiveData<Integer> getLiveData() {
 
         if(liveData==null){
@@ -21,6 +24,11 @@ public class MyViewModel extends ViewModel {
             liveData.setValue(0);
         }
         return liveData;
+    }
+   //有参数 构造器 不需要添加依赖了
+    //implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    public MyViewModel(SavedStateHandle handle){
+       this.handle=handle;
     }
 
     public void addLiveData(int i) {

@@ -3,4 +3,11 @@
     <string name="text_wenzi">测试文字</string>
     <string name="_2">+2</string>
     <string name="_1">+1</string>
+    <string name="ateam">A队</string>
+    <string name="Bteam">B队</string>
+    <string name="count1">1分</string>
+    <string name="count2">2分</string>
+    <string name="cont3">3分</string>
+    <string name="back">重置</string>
+    <string name="back_1">返回</string>
 </resources>
