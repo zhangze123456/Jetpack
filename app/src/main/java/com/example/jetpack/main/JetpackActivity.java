@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.jetpack.MaiActivity;
 import com.example.jetpack.MainActivity;
 import com.example.jetpack.R;
+import com.example.jetpack.Test.MyTest;
 import com.example.jetpack.bottomNavigation.BottomNavigationActivity;
 import com.example.jetpack.lifecycle.LifeCycleActivity;
 import com.example.jetpack.room.RoomActivity;
@@ -47,6 +48,7 @@ public class JetpackActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jetpack);
         ButterKnife.bind(this);
+        MyTest myTest=new MyTest();
     }
 
     @OnClick({R.id.tv_score, R.id.tv_navigation, R.id.tv_room, R.id.tv_lifecycle, R.id.tv_original})
@@ -70,7 +72,7 @@ public class JetpackActivity extends AppCompatActivity {
                 break;
             case R.id.tv_original:
 //                intent=new Intent(this, MainActivity.class);
-                intent=new Intent(this, MaiActivity.class);
+                intent=new Intent(this, MyTest.class);
                 startActivity(intent);
                 break;
         }
