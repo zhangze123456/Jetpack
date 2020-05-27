@@ -1,6 +1,7 @@
 package com.example.jetpack.score;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,6 +40,7 @@ public class ScoreActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.scrore_activity);
         binding.setData(myScoreViewModel);
         binding.setLifecycleOwner(this);
+
 
     }
 }
