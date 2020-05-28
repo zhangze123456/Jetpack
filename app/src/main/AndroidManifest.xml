@@ -25,6 +25,7 @@
         <activity android:name=".lifecycle.LifeCycleActivity" />
         <activity android:name=".room.RoomActivity" />
         <activity android:name=".MaiActivity" />
+        <activity android:name=".Test.MyTest" />
     </application>
 
 </manifest>

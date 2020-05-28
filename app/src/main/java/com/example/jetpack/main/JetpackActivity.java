@@ -1,5 +1,6 @@
 package com.example.jetpack.main;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,7 +17,12 @@ import com.example.jetpack.bottomNavigation.BottomNavigationActivity;
 import com.example.jetpack.lifecycle.LifeCycleActivity;
 import com.example.jetpack.room.RoomActivity;
 import com.example.jetpack.score.ScoreActivity;
+import com.example.jetpack.util.EventBusBean;
+import com.example.jetpack.util.LiveDataBus;
+import com.example.jetpack.util.PLog;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import org.greenrobot.eventbus.EventBus;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -30,7 +36,7 @@ import butterknife.OnClick;
  * 修改时间：
  * TEL：18627795967
  */
-public class JetpackActivity extends AppCompatActivity {
+public class JetpackActivity extends Activity {
     @BindView(R.id.tv_score)
     TextView tvScore;
     @BindView(R.id.tv_navigation)
@@ -48,13 +54,16 @@ public class JetpackActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jetpack);
         ButterKnife.bind(this);
-        MyTest myTest=new MyTest();
+        LiveDataBus.get().with("ceshi").setValue("上海金桥信息 股份有限公司");
+        EventBus.getDefault().postSticky(new EventBusBean("测试 eventbus的横竖屏"));
+
     }
 
     @OnClick({R.id.tv_score, R.id.tv_navigation, R.id.tv_room, R.id.tv_lifecycle, R.id.tv_original})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_score:
+
                 intent=new Intent(this, ScoreActivity.class);
                 startActivity(intent);
                 break;
@@ -76,5 +85,11 @@ public class JetpackActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+//        EventBus.getDefault().unregister(JetpackActivity.this);
     }
 }

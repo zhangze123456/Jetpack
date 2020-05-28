@@ -38,6 +38,13 @@ public class MainActivity extends AppCompatActivity {
                 textView.setText(integer + "");
             }
         });
+
+        myViewModel.getLiveData().observe(this, new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer integer) {
+
+            }
+        });
     }
 
     @OnClick({R.id.textView2, R.id.textView3})

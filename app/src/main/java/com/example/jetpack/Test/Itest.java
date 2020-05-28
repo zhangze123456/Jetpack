@@ -9,5 +9,5 @@ package com.example.jetpack.Test;
  * TEL：18627795967
  */
 public interface Itest {
-    void ceshi();
+    void ceshi(Object o);
 }
